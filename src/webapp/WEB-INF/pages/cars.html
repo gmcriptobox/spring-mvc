@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="/cars">
+<head>
+    <meta charset="UTF-8" />
+    <title>Loop</title>
+    <style>table th, table td {padding: 10px;}</style>
+</head>
+<body>
+<h1>cars list</h1>
+<table border="1">
+    <tr>
+        <th>index</th>
+        <th>model</th>
+        <th>number</th>
+        <th>series</th>
+    </tr>
+    <tr th:each="Car, state : ${carsList}">
+        <td th:utext="${state.index}">index</td>
+        <td th:utext="${Car.getModel()}"></td>
+        <td th:utext="${Car.getNumber()}"></td>
+        <td th:utext="${Car.getSeries()}"></td>
+    </tr>
+</table>
+</body>
+</html>
